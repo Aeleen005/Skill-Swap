@@ -9,5 +9,14 @@
     box-shadow: var(--shadow-sm);
     margin-top: 2rem;
 }
+chat-header {
+    background-color: var(--primary-color);
+    color: #3a0606;
+    padding: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
