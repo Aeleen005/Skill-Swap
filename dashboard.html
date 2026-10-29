@@ -1,95 +1,71 @@
-
+ <!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manage your active connections, metrics, and video learning streams.">
-  <title>Exchange Board · SkillSwap</title>
-
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="js/dashboard.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body data-type="dashboard"
-<div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="dashboard.html" aria-label="SkillSwap home">
-        <span class="brand-mark">S<span>+</span></span>
-        <span>skill<span class="brand-light">swap</span>
-          <small>LEARN • SHARE • GROW</small>
-        </span>
-      </a>
-    </div>
-      <p class="nav-label">WORKSPACE</p>
+<body>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a class="nav-link" href="profile.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Profile"/></span> My profile
-        </a>
-        <a class="nav-link" href="discover.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Discover"/></span> Discover skills
-        </a>
-        <a class="nav-link active" href="dashboard.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Board"/></span> Exchange board
-          <span class="nav-dot"></span>
-        </a>
-      </nav>
-      <div class="sidebar-note">
-        <img src="https://undraw.co" alt="Online Learning" style="width: 100%; height: auto; margin-bottom: 12px; border-radius: 4px;" />
-        <strong>Knowledge grows<br>when it's shared.</strong>
-        <p>Every skill you share can open a door for someone else.</p>
-      </div>     
-      <section class="metrics-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;">
-        
-        <div class="panel" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
-          <div style="background: rgba(99,102,241,0.1); padding: 12px; border-radius: 8px; color: var(--brand-primary); font-size: 24px;">📊</div>
-          <div>
-            <h4 style="font-size: 13px; color: var(--text-secondary); font-family: var(--font-display);">ACTIVE TRACKS</h4>
-            <p id="metricActiveCount" style="font-size: 24px; font-weight: 800; font-family: var(--font-display); margin-top: 2px;">2</p>
-          </div>
-        
-                  <div class="panel" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
-          <div style="background: rgba(192,132,252,0.1); padding: 12px; border-radius: 8px; color: #c084fc; font-size: 24px;">👤</div>
-          <div>
-            <h4 style="font-size: 13px; color: var(--text-secondary); font-family: var(--font-display);">USER IDENTITY</h4>
-            <p id="metricProfileName" style="font-size: 15px; font-weight: 700; font-family: var(--font-display); margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px;">Jane Doe</p>
-          </div>
+    <nav class="navbar">
+        <a href="discover.html" class="logo">🤝 Skill<span>Swap</span></a>
+        <ul class="nav-links">
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+        </ul>
+        <button class="btn-primary" onclick="window.location.href='discover.html?open=true'">+ Post a Skill</button>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Your Activity Central</h1>
+            <p>Monitor your active trade agreements and historical logs.</p>
         </div>
-      </section>
 
-            
-      <h2 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 20px;">Active Peer Pipelines</h2>
-      
-      <div class="grid-layout" id="dashboardGrid">
-        <div class="card">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-              <span class="badge UI" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; margin-bottom:0;">In Progress</span>
-              <small style="color: var(--text-muted);">Session ID: #8801</small>
+        <div class="layout-split">
+            <!-- Performance Statistics Mini Panel -->
+            <aside class="panel">
+                <h3 style="margin-bottom: 1rem;">Overview</h3>
+                <div style="margin-bottom: 1rem;">
+                    <small style="color: var(--text-muted);">Active Connections</small>
+                    <p id="activeCount" style="font-size: 1.75rem; font-weight: 700; color: var(--primary-color);">2</p>
+                </div>
+                <div>
+                    <small style="color: var(--text-muted);">Total Completed Trades</small>
+                    <p id="completedCount" style="font-size: 1.75rem; font-weight: 700;">14</p>
+                </div>
+            </aside>
+
+            <!-- Active Swap Progress Trackers & Chat Engine Box -->
+            <div style="display: flex; flex-direction: column; width: 100%;">
+                <section id="tradesContainer" style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+                    <h2>In Progress Connections</h2>
+                    <!-- Active connection rows load here dynamically via JavaScript -->
+                </section>
+
+                <!-- Embedded Active Chat Room Area Container -->
+                <section class="chat-room-container">
+                    <div class="chat-header">
+                        <div>Chart Room: <span id="chatPartnerName">Sarah J.</span></div>
+                        <small id="chatConnectionContext" style="opacity: 0.85;">Learning Python</small>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatHistory">
+                        <!-- Message threads load here dynamically from JSON logs -->
+                    </div>
+
+                    <form class="chat-input-bar" id="chatForm">
+                        <input type="text" id="chatInputField" placeholder="Type a message to your match..." autocomplete="off" required>
+                        <button type="submit" class="btn-primary">Send</button>
+                    </form>
+                </section>
             </div>
-            <h3>Learning: Mobile Photography</h3>
-            <p style="margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">Partner: Sarah Ekisa</p>
-            <p style="font-size: 13px; color: var(--text-secondary);">Next Sync: Tomorrow morning via workspace calendar sync link.</p>
-          </div>
-          <div class="card-footer" style="margin-top:20px;">
-            <button class="btn btn-primary streaming-action-btn" style="width: 100%; justify-content: center;">
-              <span>Enter Virtual Classroom</span> <span>📺</span>
-            </button>
-          </div>
         </div>
-        </body>
-        </html>
+    </main>
 
-
-
-
-
-
-
-
-
-    
-
+    <script src="dashboard.js"></script>
+</body>
+</html>
