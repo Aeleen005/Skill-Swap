@@ -5,7 +5,6 @@ SkillSwap is a simple website where people can trade skills for free. For exampl
 This project uses basic **HTML**, **CSS**, and **JavaScript**. It runs entirely in your web browser and saves your data automatically using **LocalStorage**.
 
 ---
-
 ##  Project Files
 
 * **discover.html & discover.js**: The main marketplace page. You can see available skills, search through them, and post your own skill using a pop-up form.
