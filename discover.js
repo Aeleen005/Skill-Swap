@@ -54,3 +54,21 @@
         
         window.location.reload();
     });
+
+    function filterCards() {
+        const query = searchBar.value.toLowerCase();
+        const category = filterCategory.value;
+        const cards = document.querySelectorAll('#discoverGrid .card');
+
+        cards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const desc = card.querySelector('.description').textContent.toLowerCase();
+            const cardCategory = card.getAttribute('data-category');
+
+            const matchesSearch = title.includes(query) || desc.includes(query);
+            const matchesCategory = category === 'all' || cardCategory === category;
+
+            card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
+        });
+    }
+    
