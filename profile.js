@@ -29,6 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
         displaySideName.textContent = inputName.value;
         const submitBtn = form.querySelector("btn-primary");
         const defaultText = submitBtn.textContent;
+         submitBtn.textContent = 'Changes Saved! ✓';
+        submitBtn.style.backgroundColor = '#10b981';
+        submitBtn.disabled = true;
         
+        setTimeout(() => {
+              submitBtn.textContent = defaultText;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.disabled = false;
+        }, 2500);
     });
+    loadUserProfile();
 });
