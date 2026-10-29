@@ -1,1 +1,96 @@
- 
+ <!-- discover.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Swaps - SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="discover.html" class="logo"> Skill<span>Swap</span></a>
+        <ul class="nav-links">
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+        </ul>
+        <button class="btn-primary" id="openModalBtn">+ Post a Skill</button>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Explore Community Skills</h1>
+            <p>Find matches who want to trade what you need.</p>
+        </div>
+
+        <!-- Filter System Bar -->
+        <div class="panel" style="margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="searchBar" placeholder="Search skills (e.g. Figma, React)..." style="flex: 1; max-width: 400px;">
+            <select id="filterCategory" style="max-width: 200px;">
+                <option value="all">All Categories</option>
+                <option value="Dev">Development</option>
+                <option value="UI">Design</option>
+                <option value="Marketing">Marketing</option>
+            </select>
+        </div>
+
+        <div class="skills-grid" id="discoverGrid">
+            <!-- Dynamically populated or static cards -->
+            <div class="card" data-category="UI">
+                <span class="badge UI">Design</span>
+                <h3>UI/UX Design Basics</h3>
+                <p class="description">I can teach Figma layouts, wireframing, and component structures.</p>
+                <div class="footer-swap">
+                    <p class="seeking"><strong>Looking for:</strong> Python or Node.js</p>
+                    <button class="btn-secondary request-btn">Request Swap</button>
+                </div>
+            </div>
+
+            <div class="card" data-category="Dev">
+                <span class="badge Dev">Development</span>
+                <h3>React & JavaScript</h3>
+                <p class="description">I can help you understand Hooks, State Management, and API integration.</p>
+                <div class="footer-swap">
+                    <p class="seeking"><strong>Looking for:</strong> Video Editing</p>
+                    <button class="btn-secondary request-btn">Request Swap</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Post Swap Modal -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Post a New Swap Offer</h2>
+            <form id="newSwapForm" style="margin-top: 1rem;">
+                <div class="form-group">
+                    <label for="skillTitle">Skill You Teach:</label>
+                    <input type="text" id="skillTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="skillCategory">Category:</label>
+                    <select id="skillCategory">
+                        <option value="Dev">Development</option>
+                        <option value="UI">Design</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="skillDesc">Description:</label>
+                    <textarea id="skillDesc" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="skillSeeking">Target Skill to Learn:</label>
+                    <input type="text" id="skillSeeking" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Publish</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="discover.js"></script>
+</body>
+</html>
