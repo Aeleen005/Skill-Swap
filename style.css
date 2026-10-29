@@ -52,6 +52,9 @@ chat-messages {
     text-decoration: none;
 }
 
-
-
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2r
+}
 
