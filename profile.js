@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function loadUserProfile() {
         const savedProfileRaw = localStorage.getItem("userProfileData");
-        if (savedProfileRaw){
+        if (savedProfileRaw) {
             const profile = JSON.parse(savedProfileRaw);
             inputName.value = profile.name;
             inputEmail.value = profile.email;
@@ -15,4 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
             displaySideName.textContent = profile.name;
         }
 	}
+
+    loadUserProfile();
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const updatedProfile = {
+            name: inputName.value,
+            email: inputEmail.value,
+            bio: inputBio.value
+        };
+        localStorage.setItem("userProfileData", JSON.stringify(updatedProfile));
+        displaySideName.textContent = inputName.value;
+        const submitBtn = form.querySelector("btn-primary");
+        const defaultText = submitBtn.textContent;
+        
+    });
 });
