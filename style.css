@@ -69,3 +69,13 @@ chat-messages {
 .nav-links a.active {
     color: var(--primary-color);
 }
+
+@media (max-width: 768px) {
+    .layout-split {
+        grid-template-columns: 1fr;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+  }
