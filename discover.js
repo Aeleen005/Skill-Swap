@@ -71,4 +71,18 @@
             card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
         });
     }
+
+    function attachRequestEvents() {
+        document.querySelectorAll('.request-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const skillName = e.target.closest('.card').querySelector('h3').textContent;
+                alert(`Swap proposal sent for: "${skillName}"! Check your Dashboard for updates.`);
+            });
+        });
+    }
+
     
+    loadSavedSkills();
+    searchBar.addEventListener('input', filterCards);
+    filterCategory.addEventListener('change', filterCards);
+
