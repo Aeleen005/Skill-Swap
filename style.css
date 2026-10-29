@@ -80,5 +80,9 @@ card h3 { margin: .6rem 0 .4rem; }
 .close-btn { position: absolute; top: .8rem; right: 1rem; color: slategray; font-size: 2rem; cursor: pointer; }
 .close-btn:hover { color: indigo; }
 
-
+.layout-split { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 2fr); gap: 1.5rem; align-items: start; }
+#tradesContainer { display: flex; flex-direction: column; gap: 1rem; }
+#tradesContainer > .panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+#tradesContainer > .panel > div:last-child { display: flex; flex-wrap: wrap; gap: .6rem; }
+#activeCount, #completedCount { color: var(--brand); font-size: 1.75rem; font-weight: 700; }
 
