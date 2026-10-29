@@ -1,117 +1,59 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+ <!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="create skillswap profile and share what you know"
-    <title>My Profile . SkillSwap</title>
+    <title>Edit Profile - SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link rel=""
-  <link href="https://googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="profile.js"defer></script>
-  </head>
+    <nav class="navbar">
+        <a href="discover.html" class="logo"> Skill<span>Swap</span></a>
+        <ul class="nav-links">
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html" class="active">My Profile</a></li>
+        </ul>
+        <button class="btn-primary" onclick="window.location.href='discover.html?open=true'">+ Post a Skill</button>
+    </nav>
 
-  <body data-page="profile">
+    <main class="container">
+        <div class="layout-split">
+            <!-- Account Overview Visual Side Display -->
+            <div class="panel" style="text-align: center;">
+                <div style="width: 100px; height: 100px; background-color: var(--primary-color); border-radius: 50%; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: bold;">
+                    JD
+                </div>
+                <h3 id="sideDisplayName">Jane Doe</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">UI Designer & Hobbyist Baker</p>
+                <hr style="border: 0; border-top: 1px solid var(--border-color); margin-bottom: 1rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Member since October 2026</p>
+            </div>
 
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="profile.html" aria-label="SkillSwap home">
-        <span class="brand-mark">S<span>+</span></span>
-        <span>skill<span class="brand-light">swap</span>
-          <small>LEARN • SHARE • GROW</small>
-        </span>
-        </a>
-
-              <p class="nav-label">WORKSPACE</p>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <a class="nav-link active" href="profile.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Profile Icon"/></span> My profile
-          <span class="nav-dot"></span>
-        </a>
-        <a class="nav-link" href="discover.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Discover Icon"/></span> Discover skills
-        </a>
-        <a class="nav-link" href="dashboard.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Board Icon"/></span> Exchange Board
-        </a>
-      </nav>
-
-      <p class="nav-label">WORKSPACE</p>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <a class="nav-link active" href="profile.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Profile Icon"/></span> My profile
-          <span class="nav-dot"></span>
-        </a>
-        <a class="nav-link" href="discover.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Discover Icon"/></span> Discover skills
-        </a>
-        <a class="nav-link" href="dashboard.html">
-          <span class="nav-icon"><img src="https://icons8.com" alt="Board Icon"/></span> Exchange board
-        </a>
-      </nav>
-
-          
-    <main class="main-content">
-...
-      <form id="profileForm">
-
-        <div class="form-section-title">
-          <span class="section-number">01</span>
-          <div>
-            <strong>About you</strong>
-            <p>Start with the basics.</p>
-          </div>
+            <!-- Profile Field Management Engine Form -->
+            <div class="panel">
+                <h2 style="margin-bottom: 1.5rem;">Profile Settings</h2>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="profileName">Full Name</label>
+                        <input type="text" id="profileName" value="Aeleen Okisai" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail">Email Address</label>
+                        <input type="email" id="profileEmail" value="aeleeokisai@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileBio">Bio / Headline</label>
+                        <textarea id="profileBio" rows="4">UI Designer looking to trade design layout concepts for modern developer stacks like Node.js.</textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Save Structural Changes</button>
+                </form>
+            </div>
         </div>
-                <div class="form-grid">
-
-          <div class="field field-full">
-            <label for="name">Your name <span class="required">*</span></label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="e.g. Aeleen Okisai"
-              maxlength="50"
-              required>
-          </div>
-                    <div class="field field-full">
-            <label for="teaches">Skills I can teach <span class="required">*</span></label>
-            <input id="teaches" name="teaches" type="text" placeholder="e.g. Photography, HTML, baking" required>
-            <span class="field-hint">Separate each skill with a comma.</span>
-          </div>
-                  <div class="form-actions">
-          <button class="btn btn-primary" type="submit">
-            <span>Save my profile</span>
-            <span aria-hidden="true">↗</span>
-          </button>
-
-          <button class="btn btn-quiet" type="button" id="clearForm">
-            Clear form
-          </button>
-        </div>
-
-        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
-
-    <aside class="profile-side">
-      <div class="preview-card panel">
-        <div class="preview-top">
-          <span class="eyebrow">LIVE PREVIEW</span>
-          <span class="preview-spark">✦</span>
-        </div>
-
-        <div class="avatar avatar-large" id="previewAvatar">A</div>
-        <h2 id="previewName">Your name</h2>
-        <p class="preview-location" id="previewLocation">⌖ Add your location</p>
-        <p class="preview-bio" id="previewBio">Your short introduction will appear here...</p>
-      </div>
-    </aside>
-    </section>
     </main>
-</div>
-  </body>
- </html>
+
+    <script src="profile.js"></script>
+</body>
+</html>
