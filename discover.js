@@ -15,4 +15,42 @@
     window.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('active');
     });
-    
+    function loadSavedSills() {
+        const rawData = localStorage.getItem("communitySkills") || '[]';
+        const savedSkills = JSON.parse(rawData);
+    savedSkills.forEach(skill => {
+         const cardMarkup = `
+                <div class="card" data-category="${skill.category}">
+                    <span class="badge ${skill.category}">${skill.category === 'Dev' ? 'Development' : skill.category === 'UI' ? 'Design' : 'Marketing'}</span>
+                    <h3>${skill.title}</h3>
+                    <p class="description">${skill.description}</p>
+                    <div class="footer-swap">
+                        <p class="seeking"><strong>Looking for:</strong> ${skill.seeking}</p>
+                        <button class="btn-secondary request-btn">Request Swap</button>
+                    </div>
+                </div>
+            `;
+            discoverGrid.insertAdjacentHTML('beforeend', cardMarkup);
+        });
+        attachRequestEvents();
+
+    }
+    newSwapForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newSkillObject = {
+            title: document.getElementById('skillTitle').value,
+            category: document.getElementById('skillCategory').value,
+            description: document.getElementById('skillDesc').value,
+            seeking: document.getElementById('skillSeeking').value,
+            id: Date.now() 
+        };
+        const currentDatabase = JSON.parse(localStorage.getItem("communitySkills") || "[]");
+        currentDatabase.push(newSkillObject);
+
+        localStorage.setItem('communitySkills', JSON.stringify(currentDatabase));
+
+        newSwapForm.reset();
+        modal.classList.remove('active');
+        
+        window.location.reload();
+    });
