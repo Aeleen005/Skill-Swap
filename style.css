@@ -9,5 +9,11 @@ font-size: medium;
   min-height: 100vh;
 }
 
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 30px;
+  align-items: start;
+}
 
 
