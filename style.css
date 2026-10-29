@@ -50,3 +50,10 @@ p { color: var(--muted); }
 .btn-primary { color: white; background: linear-gradient(120deg, mediumslateblue, indigo); box-shadow: 0 6px 16px lavender; }
 .btn-secondary { color: indigo; background: lavender; }
 .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 8px 18px thistle; }
+
+input, select, textarea { width: 100%; min-height: 46px; padding: .7rem .85rem; border: 1px solid thistle; border-radius: 10px; background: white; color: var(--ink); }
+input:focus, select:focus, textarea:focus { outline: 2px solid mediumslateblue; }
+textarea { resize: vertical; }
+label { display: block; margin-bottom: .4rem; font-weight: 700; }
+
+
