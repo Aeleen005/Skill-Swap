@@ -1,4 +1,3 @@
- // dashboard.js
 document.addEventListener('DOMContentLoaded', () => {
     const tradesContainer = document.getElementById('tradesContainer');
     const activeCountDisplay = document.getElementById('activeCount');

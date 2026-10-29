@@ -1,81 +1,11 @@
- ody {
-    background-color:burlywood;
-    color:before
-    
- }
- .chat-room-container {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    background-color: aliceblue;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    margin-top: 2rem;
-}
-.chat-header {
-    background-color: aquamarine;
-    color: maroon;
-    padding: 1rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ :root {
+    --page: ghostwhite;
+    --card: white;
+    --ink: midnightblue;
+    --muted: slategray;
+    --brand: indigo;
+    --brand-light: lavender;
+    --line: lavender;
+    --green: seagreen;
 }
 
-chat-messages {
-    flex: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #fcfcfd;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg-card);
-    padding: 1rem 2rem;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-main);
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2r
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover, 
-.nav-links a.active {
-    color: var(--primary-color);
-}
-
-@media (max-width: 768px) {
-    .layout-split {
-        grid-template-columns: 1fr;
-    }
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-  }
