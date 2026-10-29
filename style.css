@@ -89,6 +89,19 @@ card h3 { margin: .6rem 0 .4rem; }
 .chat-room-container { display: flex; min-height: 390px; flex-direction: column; margin-top: 1.5rem; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: white; box-shadow: 0 8px 24px lavender; }
 .chat-header { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; color: white; background: linear-gradient(120deg, mediumslateblue, indigo); font-weight: 700; }
 .chat-header small { color: lavender; }
-.chat-messages { display: flex; flex: 1; flex-direction: column; gap: .75rem; min-height: 240px; padding: 1.25rem; background: ghostwhite; }
+.chat-messages { display: flex; flex: 1; flex-direction: column; gap: .75rem; min-height: 240px;.chat-input-bar { display: flex; gap: .7rem; padding: .9rem; border-top: 1px solid var(--line); }
+.chat-input-bar input { flex: 1; }
+
+@media (max-width: 800px) {
+    .navbar { flex-wrap: wrap; }
+    .nav-links { order: 3; width: 100%; justify-content: center; }
+    .layout-split { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .container { padding: 2rem 0; }
+    .skills-grid, #discoverGrid { grid-template-columns: 1fr; }
+    .footer-swap, .chat-input-bar { align-items: stretch;  padding: 1.25rem; background: ghostwhite; }
+
+
 
 
