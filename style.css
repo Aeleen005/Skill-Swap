@@ -69,5 +69,10 @@ card h3 { margin: .6rem 0 .4rem; }
 .badge.UI { color: darkmagenta; background: lavenderblush; }
 .badge.Marketing { color: darkgoldenrod; background: cornsilk; }
 
+.footer-swap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.footer-swap p { margin: 0; font-size: .9rem; }
+.footer-swap strong { color: var(--ink); }
 
+.modal { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: 1rem; background: slategray; opacity: 0; visibility: hidden; transition: .2s; }
+.modal.active { opacity: 1; visibility: visible; }
 
