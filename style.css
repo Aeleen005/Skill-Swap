@@ -102,6 +102,12 @@ card h3 { margin: .6rem 0 .4rem; }
     .skills-grid, #discoverGrid { grid-template-columns: 1fr; }
     .footer-swap, .chat-input-bar { align-items: stretch;  padding: 1.25rem; background: ghostwhite; }
 
+    .footer-swap, .chat-input-bar { align-items: stretch; flex-direction: column; }
+    .footer-swap .btn-secondary { width: 100%; }
+    .modal-content { padding: 1.5rem; }
+}
+
+
 
 
 
