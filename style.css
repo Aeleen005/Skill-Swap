@@ -1,17 +1,17 @@
- chat-room-container {
+ .chat-room-container {
     display: flex;
     flex-direction: column;
     height: 400px;
-    background-color: rgb(117, 72, 13);
+    background-color: aliceblue;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     margin-top: 2rem;
 }
-chat-header {
-    background-color: var(--primary-color);
-    color: #3a0606;
+.chat-header {
+    background-color: aquamarine;
+    color: maroon;
     padding: 1rem;
     font-weight: 600;
     display: flex;
