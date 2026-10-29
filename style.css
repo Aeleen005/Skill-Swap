@@ -62,4 +62,12 @@ label { display: block; margin-bottom: .4rem; font-weight: 700; }
 .skills-grid, #discoverGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .card { display: flex; flex-direction: column; padding: 1.4rem; transition: transform .2s, box-shadow .2s; }
 .card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px thistle; }
+card h3 { margin: .6rem 0 .4rem; }
+.card .description { flex: 1; }
+.badge { display: inline-block; width: fit-content; padding: .3rem .7rem; border-radius: 30px; color: indigo; background: lavender; font-size: .8rem; font-weight: 700; }
+.badge.Dev { color: steelblue; background: aliceblue; }
+.badge.UI { color: darkmagenta; background: lavenderblush; }
+.badge.Marketing { color: darkgoldenrod; background: cornsilk; }
+
+
 
