@@ -86,3 +86,9 @@ card h3 { margin: .6rem 0 .4rem; }
 #tradesContainer > .panel > div:last-child { display: flex; flex-wrap: wrap; gap: .6rem; }
 #activeCount, #completedCount { color: var(--brand); font-size: 1.75rem; font-weight: 700; }
 
+.chat-room-container { display: flex; min-height: 390px; flex-direction: column; margin-top: 1.5rem; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: white; box-shadow: 0 8px 24px lavender; }
+.chat-header { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; color: white; background: linear-gradient(120deg, mediumslateblue, indigo); font-weight: 700; }
+.chat-header small { color: lavender; }
+.chat-messages { display: flex; flex: 1; flex-direction: column; gap: .75rem; min-height: 240px; padding: 1.25rem; background: ghostwhite; }
+
+
