@@ -75,9 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         attachCardActions();
     }
 
-    
     function attachCardActions() {
-        // Complete button logic
+        
         document.querySelectorAll('.finish-trade').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const targetCard = e.target.closest('.panel');
@@ -85,10 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tradeHeadline = targetCard.querySelector('h3').textContent;
 
                 if (confirm(`Are you finished with your trade session for "${tradeHeadline}"?`)) {
-                    // Pull working connection array data
                     const currentList = JSON.parse(localStorage.getItem('skillSwapConnections') || '[]');
 
-                    // Swap status to completed inside database array
                     const updatedList = currentList.map(item => {
                         if (item.id === targetId) {
                             item.status = 'completed';
@@ -97,18 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     localStorage.setItem('skillSwapConnections', JSON.stringify(updatedList));
 
-                    // Increment the completed tracking total score
                     let currentCompletedTotal = parseInt(localStorage.getItem('completedCountValue') || '0');
                     currentCompletedTotal += 1;
                     localStorage.setItem('completedCountValue', currentCompletedTotal.toString());
-
-                    // Re-render display layout with updated datasets
                     renderDashboard();
                 }
             });
         });
 
-        // Static chat response simulation helper
         document.querySelectorAll('.chat-trigger').forEach(btn => {
             btn.addEventListener('click', () => {
                 alert('Opening live encrypted communication channel...');
@@ -116,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Run startup cycle
     initializeDatabase();
     renderDashboard();
 });
