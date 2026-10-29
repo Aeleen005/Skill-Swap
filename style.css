@@ -2,4 +2,12 @@
     color: #0e0303;
 font-family: Georgia, 'Times New Roman', Times, serif;
 -webkit-font-feature-settings: normal;
+font-size: medium;
  }
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+
