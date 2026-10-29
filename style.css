@@ -22,3 +22,10 @@ h1, h2, h3 { line-height: 1.25; }
 h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: .5rem; }
 p { color: var(--muted); }
 
+.navbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; padding: 1rem 5%;
+    background: var(--card); border-bottom: 1px solid var(--line);
+    box-shadow: 0 4px 18px lavender;
+}
