@@ -1,3 +1,8 @@
+ ody {
+    background-color:burlywood;
+    color:before
+    
+ }
  .chat-room-container {
     display: flex;
     flex-direction: column;
@@ -18,5 +23,30 @@
     justify-content: space-between;
     align-items: center;
 }
+
+chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #fcfcfd;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-card);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+
 
 
